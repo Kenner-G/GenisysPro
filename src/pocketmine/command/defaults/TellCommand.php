@@ -73,6 +73,7 @@ class TellCommand extends VanillaCommand {
 		if($player instanceof Player){
 			$sender->sendMessage("[" . $sender->getName() . " -> " . $player->getDisplayName() . "] " . implode(" ", $args));
 			$player->sendMessage("[" . ($sender instanceof Player ? $sender->getDisplayName() : $sender->getName()) . " -> " . $player->getName() . "] " . implode(" ", $args));
+			$player->sendTip("- " . ($sender instanceof Player ? $sender->getDisplayName() . " sent you a message!");
 		}else{
 			$sender->sendMessage(new TranslationContainer("commands.generic.player.notFound"));
 		}
